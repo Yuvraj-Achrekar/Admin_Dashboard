@@ -1,5 +1,12 @@
+import AdminSidebar from "../../components/AdminSidebar";
+
 const Stopwatch = () => {
-	return <div>Stopwatch</div>;
+	return (
+		<div className="adminContainer">
+			<AdminSidebar />
+			<main>Stopwatch</main>
+		</div>
+	);
 };
 
 export default Stopwatch;

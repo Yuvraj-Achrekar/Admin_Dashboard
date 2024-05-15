@@ -1,4 +1,5 @@
 @import "mixin";
+@import "dashboard";
 
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -38,6 +39,7 @@ a {
 
 .adminContainer {
 	@include grid(1fr 4fr, 2rem);
+
 	height: 100vh;
 	background-color: rgb(247, 247, 247);
 	> aside {
