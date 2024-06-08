@@ -3,6 +3,10 @@ import AdminSidebar from "../components/AdminSidebar";
 import { CiBellOn } from "react-icons/ci";
 import user from "../assets/user.png";
 import WidgetItem from "../components/WidgetItem";
+import CategoryItem from "../components/CategoryItem";
+import data from "../assets/data.json";
+import { BarChart } from "../components/Charts";
+import { BiMaleFemale } from "react-icons/bi";
 
 const Dashboard = () => {
 	return (
@@ -46,9 +50,36 @@ const Dashboard = () => {
 				<section className="graphContainer">
 					<div className="revenueChart">
 						<h2>Revenue & Transaction</h2>
+						<BarChart
+							data_1={[344, 342, 343, 434, 433, 555, 666, 455]}
+							data_2={[456, 345, 657, 876, 855, 677, 554, 664]}
+							title_1="Revenue"
+							title_2="Transaction"
+							bgColor_1="red"
+							bgColor_2="blue"
+						/>
 					</div>
 					<div className="dashboardCategories">
 						<h2>Inventory</h2>
+						<div>
+							{data.categories.map((cat, index) => (
+								<CategoryItem
+									key={index}
+									color={`hsl(${cat.value * 4},${cat.value}%,50%)`}
+									heading={cat.heading}
+									value={cat.value}
+								/>
+							))}
+						</div>
+					</div>
+				</section>
+				<section className="transactionContianer">
+					<div className="genderChart">
+						<h2>Gender Ratio</h2>
+						{/* Chart */}
+						<p>
+							<BiMaleFemale />
+						</p>
 					</div>
 				</section>
 			</main>
