@@ -5,8 +5,10 @@ import user from "../assets/user.png";
 import WidgetItem from "../components/WidgetItem";
 import CategoryItem from "../components/CategoryItem";
 import data from "../assets/data.json";
-import { BarChart } from "../components/Charts";
+import { BarChart, DoughnutChart } from "../components/Charts";
 import { BiMaleFemale } from "react-icons/bi";
+import Table from "../components/DashboardTable";
+import DashboardTable from "../components/DashboardTable";
 
 const Dashboard = () => {
 	return (
@@ -73,14 +75,22 @@ const Dashboard = () => {
 						</div>
 					</div>
 				</section>
-				<section className="transactionContianer">
+				<section className="transactionContainer">
 					<div className="genderChart">
 						<h2>Gender Ratio</h2>
 						{/* Chart */}
+						<DoughnutChart
+							labels={["Female", "Male"]}
+							data={[12, 19]}
+							backgroundColor={["hsl(340,82%,56%)", "rgba(53,162,235,0.8) "]}
+							cutout={90}
+						/>
 						<p>
 							<BiMaleFemale />
 						</p>
 					</div>
+					{/* Table */}
+					<DashboardTable data={data.transaction} />
 				</section>
 			</main>
 		</div>
